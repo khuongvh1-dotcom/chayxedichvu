@@ -201,7 +201,13 @@ input {
         <span class="clear-btn" onclick="clearInput('km')">✕</span>
     </div>
 </div>
-
+  <div class="input-group">
+    <label>Phí cầu đường (VNĐ)</label>
+    <div class="input-wrapper">
+        <input type="text" id="cauduong" oninput="formatNumberInput(this)">
+        <span class="clear-btn" onclick="clearInput('cauduong')">✕</span>
+    </div>
+</div>
 <div class="input-group">
     <label>Khách trả (VNĐ)</label>
     <div class="input-wrapper">
@@ -291,7 +297,7 @@ function calculate() {
 
     const km = getRawNumber("km");
     const customerPrice = getRawNumber("customerPrice");
-
+    const Phicauduong = getRawNumber("cauduong");
     if (!km || !customerPrice) {
         document.getElementById("result").innerText = "";
         return;
@@ -300,7 +306,7 @@ function calculate() {
     const haoMon = km * wearCost;
     const soLit = km * fuelRate / 100;
     const tienXang = soLit * fuelPrice;
-    const tongChiPhi = haoMon + tienXang;
+    const tongChiPhi = haoMon + tienXang + Phicauduong;
     const loiNhuan = customerPrice - tongChiPhi;
 
     const color = loiNhuan >= 0 ? "#1b5e20" : "#c62828";
@@ -308,6 +314,7 @@ function calculate() {
     document.getElementById("result").innerHTML =
         `Chi phí xăng: ${tienXang.toLocaleString('vi-VN')} VNĐ<br>
          Chi phí hao mòn: ${haoMon.toLocaleString('vi-VN')} VNĐ<br>
+         Phí cầu đường: ${Phicauduong.toLocaleString('vi-VN')} VNĐ<br>
          Tổng chi phí: ${tongChiPhi.toLocaleString('vi-VN')} VNĐ<br><br>
          <div class="profit" style="color:${color}">
          LỢI NHUẬN: ${loiNhuan.toLocaleString('vi-VN')} VNĐ
