@@ -197,21 +197,21 @@ input {
   <div class="input-group">
     <label>Cự ly (km)</label>
     <div class="input-wrapper">
-        <input type="text" id="km" oninput="formatNumberInput(this)">
+        <input type="text" id="km" inputmode="numeric" oninput="formatNumberInput(this)">
         <span class="clear-btn" onclick="clearInput('km')">✕</span>
     </div>
 </div>
   <div class="input-group">
     <label>Phí cầu đường (VNĐ)</label>
     <div class="input-wrapper">
-        <input type="text" id="cauduong" oninput="formatNumberInput(this)">
+        <input type="text" id="cauduong" inputmode="numeric" oninput="formatNumberInput(this)">
         <span class="clear-btn" onclick="clearInput('cauduong')">✕</span>
     </div>
 </div>
 <div class="input-group">
     <label>Khách trả (VNĐ)</label>
     <div class="input-wrapper">
-        <input type="text" id="customerPrice" oninput="formatNumberInput(this)">
+        <input type="text" id="customerPrice" inputmode="numeric" oninput="formatNumberInput(this)">
         <span class="clear-btn" onclick="clearInput('customerPrice')">✕</span>
     </div>
 </div>
@@ -231,17 +231,17 @@ input {
 
         <div class="input-group">
             <label>Giá xăng (VNĐ)</label>
-            <input type="text" id="fuelPricePopup"oninput="formatNumberInput(this)" >
+            <input type="text" id="fuelPricePopup" inputmode="numeric" oninput="formatNumberInput(this)" >
         </div>
 
         <div class="input-group">
             <label>Tiêu hao (L / 100km)</label>
-            <input type="text" id="fuelRatePopup">
+            <input type="text" id="fuelRatePopup" inputmode="numeric">
         </div>
 
         <div class="input-group">
             <label>Hao mòn (VNĐ / km)</label>
-            <input type="text" id="wearCostPopup">
+            <input type="text" id="wearCostPopup" inputmode="numeric">
         </div>
 
         <button onclick="saveConfig()">Lưu</button>
